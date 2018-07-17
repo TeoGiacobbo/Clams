@@ -1,24 +1,147 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿@font-face {
+    font-family: Signature;
+    src: url('../fonts/Karl Geoff Personal use.ttf');
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+html, body {
+    height: 100%;
+    overflow: hidden;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+body {
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle, #111111, #777777, #B7B7B7);
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.menu {
+    overflow: hidden;
+    padding-left: 5vmin;
+    color: white;
+    text-transform: uppercase;
+    z-index: 1000;
+    font-size: 20px;
+    font-family: 'OCR A';
+    height: 45px;
 }
+
+.voceMenu {
+    float: left;
+    padding: 1vmin 2vmin;
+    cursor: pointer;
+}
+/*************************
+    EFFETTO TAGLIATO
+**************************/
+.contenitore {
+    width: 100%;
+    height: 100%;
+}
+
+.contenitoreScheda {
+    transform: rotate(0deg);
+}
+
+.schedaStorta {
+    position: absolute;
+    height: 20vh;
+    top: 40vh;
+    left: 38vw;
+}
+
+.slashed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+}
+
+    .slashed .top, .slashed .bot {
+        text-align: center;
+        font: 62px/100px arial;
+        text-transform: uppercase;
+        text-align: center;
+        overflow: hidden;
+        color: #fff;
+        width: 25vw;
+    }
+
+        .slashed .top:before, .slashed .bot:before {
+            content: attr(titolo);
+            transform: rotate(5deg);
+        }
+
+    .slashed .top {
+        position: absolute;
+        top: 0;
+        left: 5px;
+        right: 0;
+        bottom: 50%;
+    }
+
+        .slashed .top:before {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -50px;
+            font-size: 9vmin;
+        }
+
+    .slashed .bot {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 5px;
+        bottom: 0;
+    }
+
+        .slashed .bot:before {
+            position: absolute;
+            top: -50px;
+            left: 0;
+            right: 0;
+            font-size: 9vmin;
+        }
+
+@media only screen and (max-width: 600px) {
+    .slashed .top, .slashed .bot {
+        width: 31vw;
+    }
+}
+
+/*************************
+        EFFETTO 3D
+**************************/
+.effetto3D {
+    width: 20vw;
+    height: 20vh;
+    line-height: 20vh;
+    color: white;
+    text-transform: uppercase;
+    font-size: 72px;
+    font-family: 'Verdana';
+    position: absolute;
+    top: 35vh;
+    left: 22vw;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+/*************************
+          FIRMA
+**************************/
+.signature {
+    position: absolute;
+    bottom: 0;
+    z-index: 1000;
+    right: 15vmin;
+    font-size: 10vmin;
+    color: white;
+    font-family: Signature;
+    transform: rotate(-5deg);
+}
+
